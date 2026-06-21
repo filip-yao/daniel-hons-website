@@ -54,9 +54,9 @@ export function Hero() {
               Fotograf nemovitostí · Vysočina & Brno
             </p>
 
-            <h1 className="mt-6 max-w-xl text-5xl font-medium leading-[0.95] tracking-tight text-[#1a1a1a] lg:text-7xl">
+            <h1 className="mt-6 max-w-xl text-5xl font-medium leading-[1.02] tracking-tight text-[#1a1a1a] lg:text-7xl lg:leading-[1.08]">
               Fotografie, které
-              <span className="block text-primary">prodávají...</span>
+              <span className="mt-2 block text-primary lg:mt-3">prodávají...</span>
             </h1>
 
             <div className="mt-6 h-1.5 w-24 rounded-full bg-primary/80" />
