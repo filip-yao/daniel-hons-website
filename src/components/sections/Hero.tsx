@@ -56,7 +56,7 @@ export function Hero() {
 
             <h1 className="mt-6 max-w-xl text-5xl font-medium leading-[0.95] tracking-tight text-[#1a1a1a] lg:text-7xl">
               Fotografie, které
-              <span className="block text-primary">prodávají nemovitosti.</span>
+              <span className="block text-primary">prodávají...</span>
             </h1>
 
             <div className="mt-6 h-1.5 w-24 rounded-full bg-primary/80" />
