@@ -100,7 +100,7 @@ export function Portfolio() {
         </div>
 
         <div className="mt-10">
-          <ButtonLink href="#kontakt" variant="ghost">
+          <ButtonLink href="#galerie" variant="ghost">
             Zobrazit celé portfolio →
           </ButtonLink>
         </div>
