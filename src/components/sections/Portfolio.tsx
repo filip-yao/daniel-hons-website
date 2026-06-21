@@ -45,7 +45,7 @@ const portfolioItems = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="section-shell bg-bg">
+    <section id="portfolio" className="section-shell bg-surface">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,28 +53,28 @@ export function Portfolio() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
             Vybrané realizace
           </p>
-          <h2 className="mt-4 max-w-3xl font-playfair text-[clamp(2.25rem,5vw,2.75rem)] italic leading-[1.02] text-text">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Vybrané realizace
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-text-muted">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-gray-600">
             Ukázka reálné práce, fotografie a AI vizualizace z dokončené zakázky.
           </p>
         </motion.div>
 
-        <div className="mt-10 columns-1 gap-6 space-y-6 md:columns-2 xl:columns-3">
+        <div className="mt-12 columns-1 gap-6 space-y-6 md:columns-2 xl:columns-3">
           {portfolioItems.map((item, index) => (
             <motion.article
               key={`${item.title}-${item.note}-${index}`}
-              className="group break-inside-avoid border border-border bg-surface p-4 transition-transform duration-300 hover:scale-[1.02] sharp-card"
+              className="group break-inside-avoid overflow-hidden rounded-2xl border border-stone-200 bg-white p-4 shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative aspect-[4/5] overflow-hidden border border-border bg-bg">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-bg">
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -82,16 +82,16 @@ export function Portfolio() {
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,12,12,0)_35%,rgba(12,12,12,0.8)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_50%,rgba(255,255,255,0.12)_100%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
-                  <div className="w-fit max-w-full border border-border bg-bg px-3 py-2.5 shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
-                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-primary">
+                  <div className="w-fit max-w-full rounded-xl border border-stone-200 bg-white/90 px-3 py-2.5 shadow-sm">
+                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-primary">
                       Portfolio
                     </span>
-                    <h3 className="mt-1.5 text-[0.82rem] uppercase tracking-[0.2em] text-primary">
+                    <h3 className="mt-1.5 text-[0.82rem] font-medium uppercase tracking-[0.16em] text-[#1a1a1a]">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 text-[0.68rem] text-primary/80">{item.note}</p>
+                    <p className="mt-1.5 text-[0.68rem] text-gray-500">{item.note}</p>
                   </div>
                 </div>
               </div>

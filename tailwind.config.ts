@@ -8,12 +8,12 @@ const config: Config = {
         primary: "#FF9C58",
         "primary-dark": "#E8822E",
         "primary-light": "#FFB87A",
-        bg: "#0C0C0C",
-        surface: "#161616",
-        "surface-2": "#1F1F1F",
-        text: "#F5F5F0",
-        "text-muted": "#9A9A8E",
-        border: "#2A2A2A",
+        bg: "#FAFAF8",
+        surface: "#FFFFFF",
+        "surface-2": "#F5F5F2",
+        text: "#1A1A1A",
+        "text-muted": "#6B7280",
+        border: "#E5E7EB",
       },
       fontFamily: {
         playfair: ["var(--font-playfair)", "serif"],
@@ -21,7 +21,7 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 40px rgba(255, 156, 88, 0.18)",
+        glow: "0 10px 30px rgba(255, 156, 88, 0.12)",
       },
       backgroundImage: {
         "light-divider":

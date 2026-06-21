@@ -8,7 +8,7 @@ export function Testimonials() {
   const [sliderValue, setSliderValue] = useState(55);
 
   return (
-    <section className="section-shell bg-surface-2">
+    <section className="section-shell bg-surface">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,13 +16,11 @@ export function Testimonials() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">
-            Prázdný pokoj → zařízený interiér
-          </p>
-          <h2 className="mt-4 max-w-3xl font-playfair text-[clamp(2.25rem,5vw,2.75rem)] italic leading-[1.02] text-text">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">AI virtuální staging</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Prázdný pokoj → zařízený interiér
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-text-muted">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-gray-600">
             Pomocí AI dokážeme prázdnou místnost proměnit ve stylový interiér, bez fyzického
             nábytku a nákladů na home staging.
           </p>
@@ -30,13 +28,13 @@ export function Testimonials() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
           <motion.div
-            className="border border-border bg-surface p-4 sharp-card"
+            className="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative aspect-[4/5] overflow-hidden border border-border bg-bg sm:aspect-[16/10]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-stone-200 bg-bg sm:aspect-[16/10]">
               <Image
                 src="https://danhons.cz/fotky/portfolio-7.jpg"
                 alt="Před — prázdná ložnice"
@@ -58,28 +56,24 @@ export function Testimonials() {
                 />
               </div>
 
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,12,12,0)_65%,rgba(12,12,12,0.55)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_70%,rgba(255,255,255,0.1)_100%)]" />
 
               <div
-                className="absolute inset-y-0 w-px bg-primary"
+                className="absolute inset-y-0 w-px bg-primary/60"
                 style={{ left: `${sliderValue}%` }}
               >
-                <div className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-border bg-bg shadow-[0_10px_24px_rgba(0,0,0,0.28)]">
+                <div className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-stone-200 bg-white shadow-sm">
                   <div className="flex h-full items-center justify-center text-primary">
                     <span className="text-sm">↔</span>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute left-4 top-4 border border-border bg-bg px-3 py-2 text-[0.65rem] font-mono uppercase tracking-[0.24em] text-primary shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
-                PŘED / PO
-              </div>
-
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between px-4 pb-4">
-                <span className="border border-border bg-bg px-3 py-2 text-[0.65rem] font-mono uppercase tracking-[0.2em] text-primary shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
+                <span className="rounded-full border border-stone-200 bg-white/90 px-3 py-2 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-primary shadow-sm">
                   PŘED
                 </span>
-                <span className="border border-border bg-bg px-3 py-2 text-[0.65rem] font-mono uppercase tracking-[0.2em] text-primary shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
+                <span className="rounded-full border border-stone-200 bg-white/90 px-3 py-2 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-primary shadow-sm">
                   PO
                 </span>
               </div>
@@ -97,21 +91,19 @@ export function Testimonials() {
           </motion.div>
 
           <motion.aside
-            className="border border-border bg-surface p-6 sharp-card"
+            className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">AI virtuální staging</p>
-            <h3 className="mt-4 font-inter text-lg font-semibold uppercase tracking-wider text-text">
-              Prázdný pokoj → zařízený interiér
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-text-muted">
-              Pomocí AI dokážeme prázdnou místnost proměnit ve stylový interiér, bez fyzického
-              nábytku a nákladů na home staging.
-            </p>
-            <p className="mt-6 text-sm uppercase tracking-[0.18em] text-text-muted">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Co získáte</p>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-gray-600">
+              <li>Rychlá vizualizace bez fyzického nábytku</li>
+              <li>Lepší první dojem v inzerci</li>
+              <li>Nižší náklady než klasický staging</li>
+            </ul>
+            <p className="mt-6 text-sm uppercase tracking-[0.16em] text-gray-500">
               Táhněte slider pro porovnání
             </p>
           </motion.aside>

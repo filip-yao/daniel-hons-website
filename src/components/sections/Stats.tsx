@@ -14,7 +14,7 @@ export function Stats() {
     <section className="section-shell bg-surface">
       <div className="site-container">
         <motion.div
-          className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+          className="grid gap-7 md:grid-cols-2 xl:grid-cols-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -23,7 +23,7 @@ export function Stats() {
           {stats.map((stat) => (
             <article
               key={stat.label}
-              className="border border-border bg-surface-2 p-8 text-center sharp-card"
+              className="border border-border/60 bg-surface/60 p-10 text-center sharp-card"
             >
               <div className="font-mono text-5xl text-primary">{stat.value}</div>
               <p className="mt-4 text-sm uppercase tracking-[0.28em] text-text-muted">{stat.label}</p>

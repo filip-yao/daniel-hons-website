@@ -27,14 +27,14 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "border-b border-border/70 bg-surface/80 backdrop-blur-xl" : "bg-transparent"
+        isScrolled ? "border-b border-stone-200 bg-white/90 shadow-sm backdrop-blur-md" : "border-b border-stone-200 bg-white/95 shadow-sm backdrop-blur-md"
       }`}
     >
       <div className="site-container">
-        <div className="flex h-20 items-center justify-between gap-4">
+        <div className="flex h-16 items-center justify-between gap-4">
           <Link
             href="#top"
-            className="font-playfair text-2xl italic tracking-tight text-primary transition-opacity hover:opacity-90"
+            className="font-playfair text-2xl italic tracking-tight text-[#1a1a1a] transition-opacity hover:opacity-90"
           >
             Daniel Hons
           </Link>
@@ -44,7 +44,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm uppercase tracking-[0.18em] text-text-muted transition-colors hover:text-text"
+                className="text-sm uppercase tracking-[0.16em] text-gray-600 transition-colors hover:text-[#1a1a1a]"
               >
                 {link.label}
               </Link>
@@ -56,7 +56,7 @@ export function Nav() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center border border-border bg-surface text-text lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center border border-stone-200 bg-white text-[#1a1a1a] shadow-sm lg:hidden"
             aria-expanded={menuOpen}
             aria-label="Otevřít menu"
             onClick={() => setMenuOpen((value) => !value)}
@@ -69,15 +69,34 @@ export function Nav() {
           </button>
         </div>
 
+        {!isScrolled ? (
+          <div className="pb-4 lg:hidden">
+            <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-stone-200 pt-4">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm uppercase tracking-[0.16em] text-gray-600 transition-colors hover:text-[#1a1a1a]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <ButtonLink href="#kontakt" variant="secondary" className="ml-auto">
+                Nezávazná poptávka
+              </ButtonLink>
+            </nav>
+          </div>
+        ) : null}
+
         {menuOpen ? (
-          <div className="border-t border-border/70 bg-surface/95 px-4 py-5 backdrop-blur-xl lg:hidden">
+          <div className="border-t border-stone-200 bg-white/95 px-4 py-5 shadow-sm backdrop-blur-md lg:hidden">
             <nav className="flex flex-col gap-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm uppercase tracking-[0.18em] text-text-muted transition-colors hover:text-text"
+                  className="text-sm uppercase tracking-[0.16em] text-gray-600 transition-colors hover:text-[#1a1a1a]"
                 >
                   {link.label}
                 </Link>

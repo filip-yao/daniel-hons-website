@@ -16,10 +16,10 @@ const fadeRight = {
 
 export function Hero() {
   return (
-    <section id="top" className="pt-20">
-      <div className="grid min-h-screen lg:grid-cols-[1fr_1fr]">
+    <section id="top" className="bg-bg pt-16">
+      <div className="grid min-h-[90vh] lg:grid-cols-[1fr_1fr]">
         <motion.div
-          className="relative min-h-[42rem] overflow-hidden border-b border-border lg:min-h-screen lg:border-b-0 lg:border-r"
+          className="relative min-h-[32rem] overflow-hidden border-b border-stone-200 lg:min-h-[90vh] lg:border-b-0 lg:border-r"
           initial="hidden"
           animate="visible"
           variants={fadeRight}
@@ -33,16 +33,16 @@ export function Hero() {
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover object-top"
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,156,88,0.18),transparent_35%),linear-gradient(180deg,rgba(12,12,12,0.18),rgba(12,12,12,0.12))]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,12,12,0.0)_0%,rgba(12,12,12,0.58)_100%)]" />
-          <div className="absolute inset-0 border border-border/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,156,88,0.14),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.22))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.0)_0%,rgba(255,255,255,0.32)_100%)]" />
+          <div className="absolute inset-0 border border-stone-200/70" />
 
-          <div className="relative flex h-full min-h-[42rem] items-end p-6 sm:p-10 lg:min-h-screen lg:p-12">
+          <div className="relative flex h-full min-h-[32rem] items-end p-6 sm:p-10 lg:min-h-[90vh] lg:p-12">
             
           </div>
         </motion.div>
 
-        <div className="flex items-center bg-bg px-4 py-14 sm:px-6 lg:px-12 lg:py-24">
+        <div className="flex items-center bg-surface px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
           <motion.div
             className="max-w-2xl"
             initial="hidden"
@@ -50,16 +50,16 @@ export function Hero() {
             variants={fadeLeft}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
               Fotograf nemovitostí · Vysočina & Brno
             </p>
 
-            <h1 className="mt-6 max-w-xl font-playfair text-[clamp(3rem,7vw,4.5rem)] italic leading-[0.92] tracking-tight text-text">
+            <h1 className="mt-6 max-w-xl text-5xl font-medium leading-[0.95] tracking-tight text-[#1a1a1a] lg:text-7xl">
               Fotografie, které
               <span className="block text-primary">prodávají nemovitosti.</span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-text-muted sm:text-[1.08rem]">
+            <p className="mt-8 max-w-xl text-base leading-8 text-gray-600 sm:text-[1.08rem]">
               Nemovitosti s profesionální fotografií se prodávají rychleji a za lepší cenu.
               Dron v ceně každého balíčku. Fotky do 48 h, video do 72 h. Pokrývám celou Vysočinu
               a Brno.
@@ -74,17 +74,17 @@ export function Hero() {
               </ButtonLink>
             </div>
 
-            <div className="mt-8 grid gap-3 border-t border-border pt-6 text-sm text-text-muted sm:grid-cols-3">
+            <div className="mt-10 grid gap-4 border-y border-stone-200 bg-stone-50/70 py-6 text-sm text-gray-500 sm:grid-cols-3">
               <div>
-                <p className="font-mono text-2xl text-primary">48h</p>
+                <p className="font-light text-4xl tracking-tight text-primary/80">48h</p>
                 <p>Dodání fotografií</p>
               </div>
               <div>
-                <p className="font-mono text-2xl text-primary">72h</p>
+                <p className="font-light text-4xl tracking-tight text-primary/80">72h</p>
                 <p>Dodání videa</p>
               </div>
               <div>
-                <p className="font-mono text-2xl text-primary">∞</p>
+                <p className="font-light text-4xl tracking-tight text-primary/80">∞</p>
                 <p>Dron vždy v ceně</p>
               </div>
             </div>

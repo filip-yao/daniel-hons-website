@@ -29,19 +29,19 @@ function LinkedInIcon() {
 
 export function Footer() {
   return (
-    <footer className="bg-bg py-8 text-text-muted">
+    <footer className="bg-surface py-10 text-gray-500">
       <div className="site-container">
-        <div className="h-px w-full bg-light-divider opacity-90" />
+        <div className="h-px w-full bg-[linear-gradient(90deg,transparent,rgba(229,231,235,0.95),transparent)]" />
         <div className="flex flex-col gap-6 py-6 sm:flex-row sm:items-center sm:justify-between">
           <Link href="#top" className="font-playfair text-xl italic text-primary">
             Daniel Hons
           </Link>
 
-          <p className="text-sm uppercase tracking-[0.18em] text-text-muted">
+          <p className="text-sm uppercase tracking-[0.16em] text-gray-500">
             © 2026 Daniel Hons. Všechna práva vyhrazena.
           </p>
 
-          <div className="flex items-center gap-4 text-text">
+          <div className="flex items-center gap-4 text-[#1a1a1a]">
             <a
               href="https://instagram.com/dan_hons"
               target="_blank"
@@ -53,7 +53,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <p className="pb-6 text-sm leading-7 text-text-muted">
+        <p className="pb-6 text-sm leading-7 text-gray-500">
           Profesionální fotografie a video nemovitostí. Vysočina & Brno. Dron v ceně, dodání do 48 h.
         </p>
       </div>

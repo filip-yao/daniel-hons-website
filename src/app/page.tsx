@@ -1,6 +1,5 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
 import { WhyHdr } from "@/components/sections/WhyHdr";
 import { Portfolio } from "@/components/sections/Portfolio";
@@ -14,26 +13,20 @@ import { LightDivider } from "@/components/ui/LightDivider";
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden bg-bg text-text">
+    <main className="overflow-x-hidden bg-bg text-[#1a1a1a]">
       <Nav />
       <Hero />
-      <LightDivider className="py-10" />
-      <Stats />
-      <LightDivider className="py-10" />
+      <LightDivider className="py-6" />
       <Services />
-      <LightDivider className="py-10" />
       <WhyHdr />
-      <LightDivider className="py-10" />
+      <LightDivider className="py-6" />
       <Portfolio />
-      <LightDivider className="py-10" />
       <Gallery />
-      <LightDivider className="py-10" />
+      <LightDivider className="py-6" />
       <Testimonials />
-      <LightDivider className="py-10" />
       <Process />
-      <LightDivider className="py-10" />
+      <LightDivider className="py-6" />
       <About />
-      <LightDivider className="py-10" />
       <Contact />
       <Footer />
     </main>

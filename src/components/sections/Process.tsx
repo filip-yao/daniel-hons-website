@@ -27,7 +27,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="sluzby" className="section-shell bg-bg">
+    <section id="sluzby" className="section-shell bg-surface-2">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,31 +35,31 @@ export function Process() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Jak to funguje</p>
-          <h2 className="mt-4 max-w-3xl font-playfair text-[clamp(2.25rem,5vw,2.75rem)] italic leading-[1.02] text-text">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Jak to funguje</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Proces spolupráce
           </h2>
         </motion.div>
 
         <div className="relative mt-16">
-          <div className="absolute left-0 right-0 top-[3.25rem] hidden h-px bg-primary/40 lg:block" />
-          <div className="grid gap-8 lg:grid-cols-4 lg:gap-10">
+          <div className="absolute left-0 right-0 top-[3.25rem] hidden h-px bg-stone-200 lg:block" />
+          <div className="grid gap-8 lg:grid-cols-4 lg:gap-12">
             {steps.map((step) => (
               <motion.article
                 key={step.number}
-                className="relative border border-border bg-surface p-6 sharp-card"
+                className="relative rounded-2xl border border-stone-200 bg-white p-7 shadow-sm"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="relative z-10 inline-flex h-20 w-20 items-center justify-center border border-primary/40 bg-bg font-mono text-3xl text-primary">
+                <div className="relative z-10 inline-flex h-20 w-20 items-center justify-center rounded-full border border-primary/20 bg-primary/5 font-mono text-4xl font-light text-primary/35">
                   {step.number}
                 </div>
-                <h3 className="mt-6 font-inter text-lg font-semibold uppercase tracking-wider text-text">
+                <h3 className="mt-6 text-xl font-medium uppercase tracking-[0.12em] text-[#1a1a1a]">
                   {step.title}
                 </h3>
-                <p className="mt-4 max-w-sm text-sm leading-7 text-text-muted">{step.text}</p>
+                <p className="mt-4 max-w-sm text-base leading-8 text-gray-600">{step.text}</p>
               </motion.article>
             ))}
           </div>

@@ -23,7 +23,7 @@ const jihomoravsky = [
 
 export function WhyHdr() {
   return (
-    <section className="section-shell bg-surface">
+    <section className="section-shell bg-surface-2">
       <div className="site-container grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -31,14 +31,14 @@ export function WhyHdr() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
             Vysočina & Brno
           </p>
-          <h2 className="mt-4 max-w-3xl font-playfair text-[clamp(2.25rem,5vw,2.75rem)] italic leading-[1.02] text-text">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Vysočina & Brno
           </h2>
 
-          <div className="mt-8 space-y-6 text-base leading-8 text-text-muted">
+          <div className="mt-8 space-y-6 text-base leading-8 text-gray-600">
             <p>
               Lokální fotograf s dokonalou znalostí regionu. Dojíždím bez příplatků za vzdálenost v
               rámci pokrytých oblastí.
@@ -61,9 +61,9 @@ export function WhyHdr() {
             { title: "Kraj Vysočina", items: vysocina },
             { title: "Jihomoravský kraj", items: jihomoravsky },
           ].map((item) => (
-            <div key={item.title} className="border border-border bg-bg p-6 sharp-card">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">{item.title}</p>
-              <div className="mt-5 border border-dashed border-border bg-[linear-gradient(145deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))] p-5 text-sm leading-7 text-text-muted">
+            <div key={item.title} className="card-shell sharp-card overflow-hidden rounded-2xl bg-white p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.26em] text-primary">{item.title}</p>
+              <div className="mt-5 rounded-xl border border-stone-200 bg-stone-50 p-5 text-sm leading-7 text-gray-600">
                 <ul className="space-y-2">
                   {item.items.map((location) => (
                     <li key={location}>{location}</li>

@@ -34,7 +34,7 @@ export function Contact() {
   }
 
   return (
-    <section id="kontakt" className="section-shell bg-primary text-bg">
+    <section id="kontakt" className="section-shell relative overflow-hidden bg-surface-2 text-[#1a1a1a]">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,108 +42,108 @@ export function Contact() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-bg/80">Kontakt</p>
-          <h2 className="mt-4 max-w-4xl font-playfair text-[clamp(2.25rem,5vw,2.75rem)] italic leading-[1.02] text-bg">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Kontakt</p>
+          <h2 className="mt-4 max-w-4xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Připraveni ukázat nemovitost v tom nejlepším světle?
           </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-bg/80">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
             Napište nebo zavolejte. Odpovím do 24 hodin.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <ButtonLink href="mailto:danhons@icloud.com" variant="dark">
+            <ButtonLink href="mailto:danhons@icloud.com" variant="primary">
               Napsat e-mail
             </ButtonLink>
-            <ButtonLink href="tel:+420725657147" variant="dark">
+            <ButtonLink href="tel:+420725657147" variant="primary">
               Zavolat
             </ButtonLink>
           </div>
 
-          <form
-            className="mt-12 grid gap-5 border border-border bg-surface p-6 shadow-[0_18px_40px_rgba(12,12,12,0.22)] sm:p-8"
-            onSubmit={handleSubmit}
-          >
-            <div className="grid gap-5 md:grid-cols-2">
-              <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-text-muted">
-                Jméno a příjmení
+          <div className="mt-12 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+            <form className="grid gap-6 p-6 sm:p-9" onSubmit={handleSubmit}>
+              <div className="grid gap-5 md:grid-cols-2">
+                <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-gray-500">
+                  Jméno a příjmení
+                  <input
+                    name="name"
+                    type="text"
+                    required
+                    className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-base text-[#1a1a1a] placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    placeholder="Vaše jméno"
+                  />
+                </label>
+                <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-gray-500">
+                  E-mail
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-base text-[#1a1a1a] placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    placeholder="vas@email.cz"
+                  />
+                </label>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-gray-500">
+                  Telefon
+                  <input
+                    name="phone"
+                    type="tel"
+                    className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-base text-[#1a1a1a] placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    placeholder="+420 ..."
+                  />
+                </label>
+                <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-gray-500">
+                  Služba
+                  <select
+                    name="service"
+                    className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-base text-[#1a1a1a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    defaultValue="Fotografie nemovitostí"
+                  >
+                    <option>Fotografie nemovitostí</option>
+                    <option>Video & Dron</option>
+                    <option>AI Virtuální Staging</option>
+                  </select>
+                </label>
+              </div>
+
+              <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-gray-500">
+                Lokalita nemovitosti
                 <input
-                  name="name"
+                  name="location"
                   type="text"
-                  required
-                  className="w-full border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  placeholder="Vaše jméno"
+                  className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-base text-[#1a1a1a] placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  placeholder="Jihlava, Brno, ..."
                 />
               </label>
-              <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-text-muted">
-                E-mail
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  placeholder="vas@email.cz"
-                />
-              </label>
-            </div>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-text-muted">
-                Telefon
-                <input
-                  name="phone"
-                  type="tel"
-                  className="w-full border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  placeholder="+420 ..."
+              <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-gray-500">
+                Zpráva
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-base text-[#1a1a1a] placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  placeholder="Stručně popište nemovitost a termín focení"
                 />
               </label>
-              <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-text-muted">
-                Služba
-                <select
-                  name="service"
-                  className="w-full border border-border bg-bg px-4 py-3 text-base text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  defaultValue="Fotografie nemovitostí"
+
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-gray-500">Odeslání otevře váš e-mailový klient s předvyplněnou poptávkou.</p>
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-primary bg-primary px-5 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
-                  <option>Fotografie nemovitostí</option>
-                  <option>Video & Dron</option>
-                  <option>AI Virtuální Staging</option>
-                </select>
-              </label>
-            </div>
+                  Odeslat poptávku
+                </button>
+              </div>
+            </form>
+            <div className="h-8 bg-primary/15 border-t border-primary/20" />
+          </div>
 
-            <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-text-muted">
-              Lokalita nemovitosti
-              <input
-                name="location"
-                type="text"
-                className="w-full border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                placeholder="Jihlava, Brno, ..."
-              />
-            </label>
-
-            <label className="grid gap-2 text-sm uppercase tracking-[0.18em] text-text-muted">
-              Zpráva
-              <textarea
-                name="message"
-                required
-                rows={5}
-                className="w-full border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                placeholder="Stručně popište nemovitost a termín focení"
-              />
-            </label>
-
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-text-muted">Odeslání otevře váš e-mailový klient s předvyplněnou poptávkou.</p>
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 border border-primary bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-bg transition-all duration-300 hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-              >
-                Odeslat poptávku
-              </button>
-            </div>
-          </form>
-
-          <div className="mt-10 grid gap-4 text-sm text-bg/90 sm:grid-cols-3">
+          <div className="mt-10 grid gap-4 text-sm text-gray-500 sm:grid-cols-3">
             <p>📧 danhons@icloud.com</p>
             <p>📞 +420 725 657 147</p>
             <p>📍 Vysočina & Brno</p>

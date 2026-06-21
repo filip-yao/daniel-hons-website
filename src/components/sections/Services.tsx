@@ -39,7 +39,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="sluzby" className="section-shell bg-bg">
+    <section id="sluzby" className="section-shell bg-surface">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,13 +47,13 @@ export function Services() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
             Služby na míru
           </p>
-          <h2 className="mt-4 max-w-3xl font-playfair text-[clamp(2.25rem,5vw,2.75rem)] italic leading-[1.02] text-text">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Služby na míru
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-text-muted">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-gray-600">
             Od fotografie nemovitostí přes firemní video až po AI vizualizace, vše pod jednou
             střechou.
           </p>
@@ -63,13 +63,13 @@ export function Services() {
           {services.map((service) => (
             <motion.article
               key={service.title}
-              className="group card-shell sharp-card flex h-full flex-col p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70"
+              className="group card-shell sharp-card flex h-full flex-col overflow-hidden transition-colors duration-300 hover:border-primary/40"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative aspect-[16/10] overflow-hidden border border-border bg-bg">
+              <div className="relative aspect-[16/10] overflow-hidden bg-bg">
                 <Image
                   src={service.image}
                   alt={service.alt}
@@ -77,22 +77,24 @@ export function Services() {
                   sizes="(min-width: 1280px) 33vw, 100vw"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,12,12,0)_45%,rgba(12,12,12,0.7)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_56%,rgba(255,255,255,0.12)_100%)]" />
                 <div className="absolute left-3 top-3 flex flex-col gap-2">
-                  <div className="inline-flex w-fit border border-border bg-bg px-2.5 py-1.5 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-primary shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
+                  <div className="inline-flex w-fit rounded-full border border-stone-200 bg-white/90 px-2.5 py-1.5 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-primary shadow-sm">
                     {service.badge}
                   </div>
                 </div>
               </div>
 
-              <h3 className="mt-6 font-inter text-lg font-semibold uppercase tracking-wider text-text">
-                {service.title}
-              </h3>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-xl font-medium uppercase tracking-[0.12em] text-[#1a1a1a]">
+                  {service.title}
+                </h3>
 
-              <p className="mt-4 flex-1 text-sm leading-7 text-text-muted">{service.description}</p>
+                <p className="mt-4 flex-1 text-base leading-8 text-gray-600">{service.description}</p>
 
-              <div className="mt-6 border-t border-border pt-5">
-                <div className="font-mono text-2xl text-text">{service.price}</div>
+                <div className="mt-6 border-t border-stone-200 pt-5">
+                  <div className="text-2xl font-semibold text-primary">{service.price}</div>
+                </div>
               </div>
             </motion.article>
           ))}
@@ -102,7 +104,7 @@ export function Services() {
           <ButtonLink href="#kontakt" variant="primary">
             Nezávazně poptat
           </ButtonLink>
-          <p className="text-sm text-text-muted">
+          <p className="text-sm text-gray-500">
             Dron je v ceně fotografií. Fotky do 48 h, video do 72 h.
           </p>
         </div>
