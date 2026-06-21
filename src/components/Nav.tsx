@@ -36,7 +36,7 @@ export function Nav() {
             href="#top"
             className="font-playfair text-2xl italic tracking-tight text-[#1a1a1a] transition-opacity hover:opacity-90"
           >
-            Daniel Hons
+            Daniel <span className="text-primary">Hons</span>
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
@@ -49,7 +49,7 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <ButtonLink href="#kontakt" variant="secondary">
+            <ButtonLink href="#kontakt" variant="primary">
               Nezávazná poptávka
             </ButtonLink>
           </nav>
@@ -69,25 +69,6 @@ export function Nav() {
           </button>
         </div>
 
-        {!isScrolled ? (
-          <div className="pb-4 lg:hidden">
-            <nav className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-stone-200 pt-4">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm uppercase tracking-[0.16em] text-gray-600 transition-colors hover:text-[#1a1a1a]"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <ButtonLink href="#kontakt" variant="secondary" className="ml-auto">
-                Nezávazná poptávka
-              </ButtonLink>
-            </nav>
-          </div>
-        ) : null}
-
         {menuOpen ? (
           <div className="border-t border-stone-200 bg-white/95 px-4 py-5 shadow-sm backdrop-blur-md lg:hidden">
             <nav className="flex flex-col gap-4">
@@ -101,7 +82,7 @@ export function Nav() {
                   {link.label}
                 </Link>
               ))}
-              <ButtonLink href="#kontakt" variant="secondary" className="mt-2 w-fit">
+              <ButtonLink href="#kontakt" variant="primary" className="mt-2 w-fit">
                 Nezávazná poptávka
               </ButtonLink>
             </nav>

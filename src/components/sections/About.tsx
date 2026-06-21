@@ -8,18 +8,18 @@ export function About() {
     <section className="section-shell bg-surface">
       <div className="site-container">
         <motion.div
-          className="max-w-3xl"
+          className="mx-auto max-w-4xl"
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Proč Daniel Hons</p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
+          <p className="text-center font-mono text-xs uppercase tracking-[0.3em] text-primary">Proč Daniel Hons</p>
+          <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight tracking-tight text-[#1a1a1a] lg:text-4xl">
             Jiní fotí. Já prodávám.
           </h2>
 
-          <div className="mt-6 space-y-6 text-base leading-8 text-gray-600">
+          <div className="mx-auto mt-6 max-w-3xl space-y-6 text-center text-base leading-8 text-gray-600">
             <p>
               Tři věci, které u jiných fotografů nemovitostí na Vysočině nenajdete.
             </p>

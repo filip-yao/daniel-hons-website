@@ -19,26 +19,26 @@ export function Hero() {
     <section id="top" className="bg-bg pt-16">
       <div className="grid min-h-[90vh] lg:grid-cols-[1fr_1fr]">
         <motion.div
-          className="relative min-h-[32rem] overflow-hidden border-b border-stone-200 lg:min-h-[90vh] lg:border-b-0 lg:border-r"
+          className="relative flex min-h-[24rem] items-center justify-center overflow-hidden border-b border-stone-200 bg-stone-50 px-6 py-10 lg:min-h-[90vh] lg:border-b-0 lg:border-r"
           initial="hidden"
           animate="visible"
           variants={fadeRight}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src="/photos/danielhons.png"
-            alt="Daniel Hons, realitní fotograf"
-            fill
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,156,88,0.14),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.22))]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.0)_0%,rgba(255,255,255,0.32)_100%)]" />
-          <div className="absolute inset-0 border border-stone-200/70" />
+          <div className="pointer-events-none absolute -left-10 top-10 h-32 w-32 rounded-full bg-primary/12 blur-2xl" />
+          <div className="pointer-events-none absolute bottom-16 right-4 h-28 w-28 rounded-full border border-primary/25" />
 
-          <div className="relative flex h-full min-h-[32rem] items-end p-6 sm:p-10 lg:min-h-[90vh] lg:p-12">
-            
+          <div className="relative rounded-full border border-primary/30 p-3">
+            <div className="relative h-64 w-64 overflow-hidden rounded-full border-8 border-white shadow-sm sm:h-72 sm:w-72 lg:h-[25rem] lg:w-[25rem]">
+              <Image
+                src="/photos/danielhons.png"
+                alt="Daniel Hons, realitní fotograf"
+                fill
+                priority
+                sizes="(min-width: 1024px) 38vw, 70vw"
+                className="object-cover object-top"
+              />
+            </div>
           </div>
         </motion.div>
 
@@ -58,6 +58,8 @@ export function Hero() {
               Fotografie, které
               <span className="block text-primary">prodávají nemovitosti.</span>
             </h1>
+
+            <div className="mt-6 h-1.5 w-24 rounded-full bg-primary/80" />
 
             <p className="mt-8 max-w-xl text-base leading-8 text-gray-600 sm:text-[1.08rem]">
               Nemovitosti s profesionální fotografií se prodávají rychleji a za lepší cenu.
