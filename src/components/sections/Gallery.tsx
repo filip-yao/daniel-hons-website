@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ButtonLink } from "../ui/Button";
+import { portfolioYoutubeVideos } from "@/data/portfolioVideos";
 
 type GalleryCategory = "Vše" | "Obývací pokoj" | "Kuchyň" | "Ložnice" | "Jídelna" | "AI vizualizace";
 
@@ -61,6 +62,38 @@ const galleryItems: GalleryItem[] = [
   },
 ];
 
+function toYoutubeEmbedUrl(url: string) {
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, "");
+
+    if (host === "youtu.be") {
+      const id = parsed.pathname.replace("/", "").trim();
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+
+    if (host === "youtube.com" || host === "m.youtube.com") {
+      if (parsed.pathname === "/watch") {
+        const id = parsed.searchParams.get("v");
+        return id ? `https://www.youtube.com/embed/${id}` : null;
+      }
+
+      if (parsed.pathname.startsWith("/shorts/")) {
+        const id = parsed.pathname.split("/")[2];
+        return id ? `https://www.youtube.com/embed/${id}` : null;
+      }
+
+      if (parsed.pathname.startsWith("/embed/")) {
+        return `https://www.youtube.com${parsed.pathname}`;
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
 export function Gallery() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>("Vše");
 
@@ -71,6 +104,14 @@ export function Gallery() {
 
     return galleryItems.filter((item) => item.category === activeCategory);
   }, [activeCategory]);
+
+  const youtubeEmbeds = useMemo(
+    () =>
+      portfolioYoutubeVideos
+        .map((url) => ({ url, embed: toYoutubeEmbedUrl(url) }))
+        .filter((item): item is { url: string; embed: string } => item.embed !== null),
+    [],
+  );
 
   return (
     <section id="galerie" className="section-shell bg-surface-2">
@@ -146,6 +187,32 @@ export function Gallery() {
             </motion.article>
           ))}
         </div>
+
+        {youtubeEmbeds.length > 0 ? (
+          <div className="mt-12">
+            <h3 className="text-2xl font-medium tracking-tight text-[#1a1a1a]">Ukázková videa</h3>
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              {youtubeEmbeds.map((video) => (
+                <article
+                  key={video.url}
+                  className="overflow-hidden rounded-2xl border border-stone-200 bg-white p-3 shadow-sm"
+                >
+                  <div className="relative aspect-video overflow-hidden rounded-xl bg-black">
+                    <iframe
+                      src={video.embed}
+                      title="YouTube video"
+                      className="h-full w-full"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-10">
           <ButtonLink href="/portfolio" variant="ghost">

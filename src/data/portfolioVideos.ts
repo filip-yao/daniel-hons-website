@@ -1,5 +1,4 @@
 export const portfolioYoutubeVideos = [
-  // Sem vloz vlastni YouTube odkazy, napr.:
-  // "https://www.youtube.com/watch?v=XXXXXXXXXXX",
-  // "https://youtu.be/XXXXXXXXXXX",
+  "https://youtu.be/FNLK7WD9sCk",
+  "https://youtu.be/ZORkA8JD5Lk",
 ];
