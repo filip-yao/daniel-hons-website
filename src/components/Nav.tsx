@@ -5,11 +5,11 @@ import Link from "next/link";
 import { ButtonLink } from "./ui/Button";
 
 const links = [
-  { label: "Domů", href: "#top" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Služby & Ceník", href: "#sluzby" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Domů", href: "/#top" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Galerie", href: "/portfolio" },
+  { label: "Služby & Ceník", href: "/#sluzby" },
+  { label: "Kontakt", href: "/#kontakt" },
 ];
 
 export function Nav() {
@@ -33,7 +33,7 @@ export function Nav() {
       <div className="site-container">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link
-            href="#top"
+            href="/"
             className="font-playfair text-2xl italic tracking-tight text-[#1a1a1a] transition-opacity hover:opacity-90"
           >
             Daniel <span className="text-primary">Hons</span>
@@ -49,7 +49,7 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <ButtonLink href="#kontakt" variant="primary">
+            <ButtonLink href="/#kontakt" variant="primary">
               Nezávazná poptávka
             </ButtonLink>
           </nav>
@@ -82,7 +82,7 @@ export function Nav() {
                   {link.label}
                 </Link>
               ))}
-              <ButtonLink href="#kontakt" variant="primary" className="mt-2 w-fit">
+              <ButtonLink href="/#kontakt" variant="primary" className="mt-2 w-fit">
                 Nezávazná poptávka
               </ButtonLink>
             </nav>

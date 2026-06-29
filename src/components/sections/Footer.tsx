@@ -33,7 +33,7 @@ export function Footer() {
       <div className="site-container">
         <div className="h-px w-full bg-[linear-gradient(90deg,transparent,rgba(229,231,235,0.95),transparent)]" />
         <div className="flex flex-col gap-6 py-6 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="#top" className="font-playfair text-xl italic text-[#1a1a1a]">
+          <Link href="/" className="font-playfair text-xl italic text-[#1a1a1a]">
             Daniel <span className="text-primary">Hons</span>
           </Link>
 

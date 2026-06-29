@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { ButtonLink } from "../ui/Button";
 
 type GalleryCategory = "Vše" | "Obývací pokoj" | "Kuchyň" | "Ložnice" | "Jídelna" | "AI vizualizace";
 
@@ -144,6 +145,12 @@ export function Gallery() {
               </div>
             </motion.article>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <ButtonLink href="/portfolio" variant="ghost">
+            Otevřít velkou galerii →
+          </ButtonLink>
         </div>
       </div>
     </section>
