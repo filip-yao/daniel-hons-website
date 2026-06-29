@@ -8,37 +8,37 @@ const portfolioItems = [
   {
     title: "OBÝVACÍ POKOJ",
     note: "Obývací pokoj s krbem",
-    image: "https://danhons.cz/fotky/portfolio-1.jpg",
+    image: "/photos/puvodni/portfolio-1.jpg",
     alt: "Obývací pokoj s krbem - fotografie nemovitosti",
   },
   {
     title: "KUCHYŇ",
     note: "Kuchyň s ostrovem",
-    image: "https://danhons.cz/fotky/portfolio-2.jpg",
+    image: "/photos/puvodni/portfolio-2.jpg",
     alt: "Kuchyň s ostrovem - fotografie nemovitosti",
   },
   {
     title: "AI VIZUALIZACE",
     note: "Ložnice virtual staging",
-    image: "https://danhons.cz/fotky/portfolio-3.jpg",
+    image: "/photos/puvodni/portfolio-3.jpg",
     alt: "Ložnice AI vizualizace - virtual staging",
   },
   {
     title: "LOŽNICE",
     note: "Ložnice",
-    image: "https://danhons.cz/fotky/portfolio-4.jpg",
+    image: "/photos/puvodni/portfolio-4.jpg",
     alt: "Ložnice - fotografie nemovitosti",
   },
   {
     title: "JÍDELNA",
     note: "Jídelna s kuchyní",
-    image: "https://danhons.cz/fotky/portfolio-5.jpg",
+    image: "/photos/puvodni/portfolio-5.jpg",
     alt: "Jídelna s kuchyní - fotografie nemovitosti",
   },
   {
     title: "AI VIZUALIZACE",
     note: "Prázdný pokoj → zařízený interiér",
-    image: "https://danhons.cz/fotky/portfolio-6.jpg",
+    image: "/photos/puvodni/portfolio-6.jpg",
     alt: "Po AI vizualizace ložnice",
   },
 ];

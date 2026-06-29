@@ -52,7 +52,7 @@ export function About() {
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             <div className="relative aspect-square overflow-hidden rounded-xl border border-stone-200 bg-bg">
               <Image
-                src="https://danhons.cz/fotky/portfolio-4.jpg"
+                src="/photos/puvodni/portfolio-4.jpg"
                 alt="Ložnice - fotografie nemovitosti"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -61,7 +61,7 @@ export function About() {
             </div>
             <div className="relative aspect-square overflow-hidden rounded-xl border border-stone-200 bg-bg">
               <Image
-                src="https://danhons.cz/fotky/portfolio-6.jpg"
+                src="/photos/puvodni/portfolio-6.jpg"
                 alt="Po AI vizualizace ložnice"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -70,7 +70,7 @@ export function About() {
             </div>
             <div className="relative aspect-square overflow-hidden rounded-xl border border-stone-200 bg-bg">
               <Image
-                src="https://danhons.cz/fotky/portfolio-7.jpg"
+                src="/photos/puvodni/portfolio-7.jpg"
                 alt="Před prázdná ložnice"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"

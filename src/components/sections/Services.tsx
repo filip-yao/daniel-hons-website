@@ -8,7 +8,7 @@ const services = [
   {
     number: "01",
     title: "Fotografie nemovitostí",
-    image: "https://danhons.cz/fotky/portfolio-1.jpg",
+    image: "/photos/puvodni/portfolio-1.jpg",
     alt: "Obývací pokoj s krbem - fotografie nemovitosti",
     description:
       "Nemovitost vidíte vy, kupci vidí jen fotku. HDR fotografie s dronem, perfektní kompozice a nasvícení. Fotky, které prodávají nemovitost ještě před první prohlídkou.",
@@ -18,7 +18,7 @@ const services = [
   {
     number: "02",
     title: "Video & Dron",
-    image: "https://danhons.cz/fotky/portfolio-2.jpg",
+    image: "/photos/puvodni/portfolio-2.jpg",
     alt: "Kuchyň s ostrovem - fotografie nemovitosti",
     description:
       "Video prodává emoce. Prezentační video s leteckými záběry, profesionálním střihem a hudbou. Formáty pro Sreality, Instagram i YouTube. Hotovo do 72 hodin.",
@@ -28,7 +28,7 @@ const services = [
   {
     number: "03",
     title: "AI Virtuální Staging",
-    image: "https://danhons.cz/fotky/portfolio-6.jpg",
+    image: "/photos/puvodni/portfolio-6.jpg",
     alt: "Po AI vizualizace ložnice",
     description:
       "Prázdný byt se prodává špatně. AI staging ukáže, jak místnost vypadá zařízená, bez stěhování nábytku, bez čekání. Kupec vidí domov, ne prázdné zdi.",

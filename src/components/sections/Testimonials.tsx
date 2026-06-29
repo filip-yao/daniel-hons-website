@@ -36,7 +36,7 @@ export function Testimonials() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-stone-200 bg-bg sm:aspect-[16/10]">
               <Image
-                src="https://danhons.cz/fotky/portfolio-7.jpg"
+                src="/photos/puvodni/portfolio-7.jpg"
                 alt="Před — prázdná ložnice"
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
@@ -48,7 +48,7 @@ export function Testimonials() {
                 style={{ clipPath: `inset(0 ${100 - sliderValue}% 0 0)` }}
               >
                 <Image
-                  src="https://danhons.cz/fotky/portfolio-6.jpg"
+                  src="/photos/puvodni/portfolio-6.jpg"
                   alt="Po — AI vizualizace ložnice"
                   fill
                   sizes="(min-width: 1024px) 60vw, 100vw"
