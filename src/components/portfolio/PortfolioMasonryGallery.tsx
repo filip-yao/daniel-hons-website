@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 type GalleryImage = {
   src: string;
@@ -26,23 +26,23 @@ export function PortfolioMasonryGallery({ images }: PortfolioMasonryGalleryProps
   const openImage = (index: number) => setActiveIndex(index);
   const closeLightbox = () => setActiveIndex(null);
 
-  const showPrevious = () => {
+  const showPrevious = useCallback(() => {
     if (activeIndex === null) {
       return;
     }
 
     const previous = (activeIndex - 1 + images.length) % images.length;
     setActiveIndex(previous);
-  };
+  }, [activeIndex, images.length]);
 
-  const showNext = () => {
+  const showNext = useCallback(() => {
     if (activeIndex === null) {
       return;
     }
 
     const next = (activeIndex + 1) % images.length;
     setActiveIndex(next);
-  };
+  }, [activeIndex, images.length]);
 
   useEffect(() => {
     if (activeIndex === null) {
@@ -65,7 +65,7 @@ export function PortfolioMasonryGallery({ images }: PortfolioMasonryGalleryProps
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeIndex]);
+  }, [activeIndex, showNext, showPrevious]);
 
   return (
     <>

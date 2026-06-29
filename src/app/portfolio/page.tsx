@@ -1,24 +1,9 @@
-import fs from "node:fs/promises";
-import path from "node:path";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/sections/Footer";
 import { ButtonLink } from "@/components/ui/Button";
 import { portfolioYoutubeVideos } from "@/data/portfolioVideos";
+import { portfolioGalleryImages } from "@/data/galleryImages";
 import { PortfolioMediaSwitcher } from "@/components/portfolio/PortfolioMediaSwitcher";
-
-type GalleryImage = {
-  src: string;
-  alt: string;
-};
-
-const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
-
-function normalizeLabel(fileName: string) {
-  return fileName
-    .replace(/\.[^/.]+$/, "")
-    .replace(/[-_]+/g, " ")
-    .trim();
-}
 
 function toYoutubeEmbedUrl(url: string) {
   try {
@@ -52,27 +37,8 @@ function toYoutubeEmbedUrl(url: string) {
   return null;
 }
 
-async function getGalleryImages(): Promise<GalleryImage[]> {
-  const galleryDir = path.join(process.cwd(), "public", "photos", "galerie");
-
-  try {
-    const entries = await fs.readdir(galleryDir, { withFileTypes: true });
-
-    return entries
-      .filter((entry) => entry.isFile())
-      .filter((entry) => imageExtensions.has(path.extname(entry.name).toLowerCase()))
-      .sort((a, b) => a.name.localeCompare(b.name, "cs", { numeric: true }))
-      .map((entry) => ({
-        src: `/photos/galerie/${entry.name}`,
-        alt: `Galerie - ${normalizeLabel(entry.name)}`,
-      }));
-  } catch {
-    return [];
-  }
-}
-
-export default async function PortfolioPage() {
-  const images = await getGalleryImages();
+export default function PortfolioPage() {
+  const images = portfolioGalleryImages;
   const youtubeEmbeds = portfolioYoutubeVideos
     .map((url) => ({ url, embed: toYoutubeEmbedUrl(url) }))
     .filter((item): item is { url: string; embed: string } => item.embed !== null);
